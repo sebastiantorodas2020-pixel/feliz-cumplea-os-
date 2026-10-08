@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Feliz cumpleaños</title>
+
+    <style>
+
+        /* ===== FONDO AZUL OCÉANO + DORADO ===== */
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            background: linear-gradient(
+                135deg,
+                #061f33,
+                #087ea4,
+                #0b4f71
+            );
+
+            background-size: 400% 400%;
+            animation: fondo 12s ease infinite;
+
+            overflow-x: hidden;
+
+            font-family: Georgia, serif;
+            color: white;
+        }
+
+        @keyframes fondo {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+
+        }
+
+
+        /* ===== CONTENEDOR DE LA CARTA ===== */
+
+        .carta {
+
+            position: relative;
+            z-index: 2;
+
+            width: 85%;
+            max-width: 800px;
+
+            margin: 60px auto;
+            padding: 35px;
+
+            box-sizing: border-box;
+
+            background: rgba(4, 30, 48, 0.75);
+
+            border: 2px solid #f5d76e;
+            border-radius: 20px;
+
+            box-shadow:
+                0 0 20px rgba(245, 215, 110, .25),
+                0 15px 40px rgba(0, 0, 0, .35);
+
+            backdrop-filter: blur(5px);
+
+            animation: aparecerCarta 1.2s ease;
+        }
+
+        @keyframes aparecerCarta {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* ===== LÍNEA DORADA ===== */
+
+        .carta::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 10%;
+
+            width: 80%;
+            height: 3px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                #f5d76e,
+                transparent
+            );
+
+        }
+
+
+        /* ===== TÍTULO ===== */
+
+        h1 {
+
+            text-align: center;
+
+            color: #ffffff;
+
+            font-size: 42px;
+
+            margin-top: 5px;
+            margin-bottom: 35px;
+
+            text-shadow:
+                0 0 5px rgba(245, 215, 110, .5),
+                0 0 15px rgba(245, 215, 110, .3);
+
+            animation: aparecerTitulo 1.5s ease;
+        }
+
+        @keyframes aparecerTitulo {
+
+            from {
+                opacity: 0;
+                transform: scale(.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+
+        /* ===== CORAZONES ===== */
+
+        .corazon {
+
+            color: #f5d76e;
+
+            display: inline-block;
+
+            animation: latido 1.4s infinite;
+        }
+
+        .corazon.izquierdo {
+            margin-right: 10px;
+        }
+
+        .corazon.derecho {
+            margin-left: 10px;
+        }
+
+        @keyframes latido {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
+
+        }
+
+
+        /* ===== TEXTO ===== */
+
+        p {
+
+            font-size: 19px;
+
+            line-height: 1.8;
+
+            text-align: justify;
+
+            color: #f5f5f5;
+
+            animation: aparecerTexto 2s ease;
+        }
+
+        @keyframes aparecerTexto {
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+
+        /* ===== IMAGEN ===== */
+
+        .imagen-contenedor {
+
+            text-align: center;
+
+            margin-top: 35px;
+        }
+
+        .imagen {
+
+            width: 80%;
+            max-width: 500px;
+
+            border-radius: 25px;
+
+            border: 3px solid #f5d76e;
+
+            box-shadow:
+                0 0 20px rgba(245, 215, 110, .3),
+                0 10px 30px rgba(0, 0, 0, .4);
+
+            transition: transform .4s ease;
+        }
+
+        .imagen:hover {
+
+            transform: scale(1.03);
+
+        }
+
+
+        /* ================================================= */
+        /* ===== BOTÓN DE SPOTIFY =========================== */
+        /* ================================================= */
+
+        .musica {
+
+            text-align: center;
+
+            margin-top: 40px;
+        }
+
+
+        .boton-musica {
+
+            background: linear-gradient(
+                135deg,
+                #f5d76e,
+                #d4af37
+            );
+
+            color: #061f33;
+
+            border: none;
+
+            padding: 16px 38px;
+
+            border-radius: 50px;
+
+            font-size: 20px;
+
+            font-family: Georgia, serif;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 0 15px rgba(245, 215, 110, .4),
+                0 5px 20px rgba(0, 0, 0, .3);
+
+            transition: all .3s ease;
+
+            animation: botonFlotando 2.5s ease-in-out infinite;
+        }
+
+
+        .boton-musica:hover {
+
+            transform: scale(1.08);
+
+            box-shadow:
+                0 0 30px rgba(245, 215, 110, .8),
+                0 8px 25px rgba(0, 0, 0, .4);
+        }
+
+
+        .boton-musica:active {
+
+            transform: scale(.95);
+
+        }
+
+
+        @keyframes botonFlotando {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+        }
+
+
+        /* ===== REPRODUCTOR SPOTIFY ===== */
+
+        .reproductor {
+
+            display: none;
+
+            margin-top: 25px;
+
+            animation: aparecerMusica .8s ease;
+        }
+
+
+        .reproductor iframe {
+
+            width: 100%;
+
+            max-width: 560px;
+
+            height: 352px;
+
+            border-radius: 12px;
+
+            border: 2px solid #f5d76e;
+
+            box-shadow:
+                0 0 25px rgba(245, 215, 110, .3),
+                0 10px 30px rgba(0, 0, 0, .4);
+        }
+
+
+        @keyframes aparecerMusica {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(20px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+        /* ===== BRILLOS ===== */
+
+        .decoracion {
+
+            position: fixed;
+
+            color: #f5d76e;
+
+            font-size: 25px;
+
+            pointer-events: none;
+
+            z-index: 1;
+
+            animation: flotar 4s ease-in-out infinite;
+        }
+
+        .d1 {
+
+            top: 10%;
+            left: 8%;
+        }
+
+        .d2 {
+
+            top: 20%;
+            right: 10%;
+
+            animation-delay: 1s;
+        }
+
+        .d3 {
+
+            bottom: 15%;
+            left: 12%;
+
+            animation-delay: 2s;
+        }
+
+        .d4 {
+
+            bottom: 8%;
+            right: 15%;
+
+            animation-delay: 3s;
+        }
+
+
+        @keyframes flotar {
+
+            0%, 100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: .6;
+            }
+
+            50% {
+
+                transform:
+                    translateY(-15px)
+                    rotate(15deg);
+
+                opacity: 1;
+            }
+
+        }
+
+
+        /* ===== BURBUJAS ===== */
+
+        .burbuja {
+
+            position: fixed;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, .15);
+
+            pointer-events: none;
+
+            animation: subir 10s linear infinite;
+
+            z-index: 1;
+        }
+
+        .b1 {
+
+            width: 25px;
+            height: 25px;
+
+            left: 15%;
+            bottom: -40px;
+        }
+
+        .b2 {
+
+            width: 15px;
+            height: 15px;
+
+            left: 70%;
+            bottom: -40px;
+
+            animation-delay: 3s;
+        }
+
+        .b3 {
+
+            width: 40px;
+            height: 40px;
+
+            left: 45%;
+            bottom: -40px;
+
+            animation-delay: 6s;
+        }
+
+
+        @keyframes subir {
+
+            from {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            to {
+
+                transform:
+                    translateY(-120vh);
+
+            }
+
+        }
+
+
+        /* ===== CELULAR ===== */
+
+        @media (max-width: 600px) {
+
+            .carta {
+
+                width: 92%;
+
+                padding: 25px;
+
+                margin: 35px auto;
+            }
+
+
+            h1 {
+
+                font-size: 30px;
+            }
+
+
+            p {
+
+                font-size: 17px;
+
+                line-height: 1.7;
+            }
+
+
+            .imagen {
+
+                width: 95%;
+            }
+
+
+            .boton-musica {
+
+                font-size: 18px;
+
+                padding: 14px 30px;
+            }
+
+
+            .reproductor iframe {
+
+                height: 352px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ===== DECORACIONES ===== -->
+
+    <div class="decoracion d1">✦</div>
+
+    <div class="decoracion d2">✧</div>
+
+    <div class="decoracion d3">✦</div>
+
+    <div class="decoracion d4">✧</div>
+
+
+    <div class="burbuja b1"></div>
+
+    <div class="burbuja b2"></div>
+
+    <div class="burbuja b3"></div>
+
+
+    <!-- ===== CARTA ===== -->
+
+    <div class="carta">
+
+
+        <!-- ===== TÍTULO ===== -->
+
+        <h1>
+
+            <span class="corazon izquierdo">♥</span>
+
+            <i>Feliz cumpleaños</i>
+
+            <span class="corazon derecho">♥</span>
+
+        </h1>
+
+
+        <!-- ===== MENSAJE ===== -->
+
+        <p>
+
+            <i>
+
+                Hola, ¿cómo estás? Espero que bien. Ya tan rápido es tu cumple,
+                cómo pasa de volada el tiempo, ¿no crees?
+
+                Bueno, pues ya a lo que viene esta carta. Tú sabes que eres una
+                de las personas más especiales de mi vida. Desde que te conocí
+                lo cambiaste todo para mí.
+
+                Tú fuiste mi faro cuando yo no podía. Tú me ayudaste cuando nadie
+                lo hacía. Tú eres una persona increíble.
+
+                Te quiero y en tu día quiero que lo sepas más. Tú eres el amor
+                de mi vida, te amo y no sabes con qué intensidad lo hago.
+
+                ¡Felizzz cumpleee! Que la pases bienn.
+
+                Nos vemos en cuatro años.
+
+            </i>
+
+        </p>
+
+
+        <!-- ===== IMAGEN ===== -->
+
+        <div class="imagen-contenedor">
+
+            <img
+                src="imagen de y&e.png"
+                alt="Imagen especial"
+                class="imagen"
+            >
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- ===== MÚSICA DE SPOTIFY ========================= -->
+        <!-- ================================================= -->
+
+        <div class="musica">
+
+
+            <button
+                class="boton-musica"
+                onclick="mostrarMusica()"
+            >
+
+                💙 PÍCAME 💙
+
+            </button>
+
+
+            <div
+                id="reproductor"
+                class="reproductor"
+            >
+
+                <iframe
+                    data-testid="embed-iframe"
+                    src="https://open.spotify.com/embed/track/5SudOD9R1Of6CsJVWZy6CQ?utm_source=generator"
+                    frameBorder="0"
+                    allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ===== AQUÍ DESPUÉS PONDREMOS EL VIDEO ===== -->
+
+
+    </div>
+
+
+    <!-- ===== JAVASCRIPT ===== -->
+
+    <script>
+
+        function mostrarMusica() {
+
+            const reproductor =
+                document.getElementById("reproductor");
+
+            reproductor.style.display = "block";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
